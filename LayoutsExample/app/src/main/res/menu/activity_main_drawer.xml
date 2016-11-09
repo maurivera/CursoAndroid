@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_linear_layout"
+            android:checked="true"
+            android:title="texto 1" />
+        <item
+            android:id="@+id/nav_relative_layout"
+
+            android:title="texto 2"></item>
+
+        <item
+            android:id="@+id/nav_flexible_layout"
+            android:title="texto 3"></item>
+    </group>
+</menu>
