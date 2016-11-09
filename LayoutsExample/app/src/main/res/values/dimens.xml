@@ -2,5 +2,31 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="toolbar_tittle_text_size">16sp</dimen>
+
+    <!-- Navigation ConnectionView -->
     <dimen name="navigation_view_width">280dp</dimen>
+    <dimen name="navigation_view_item_image_view_width">34dp</dimen>
+    <dimen name="navigation_view_item_image_view_height">34dp</dimen>
+    <dimen name="navigation_view_item_image_view_margin_bottom">20dp</dimen>
+    <dimen name="navigation_view_header_height">126dp</dimen>
+    <dimen name="navigation_view_user_text_view_size">18sp</dimen>
+    <dimen name="navigation_view_user_text_view_margin_top">16dp</dimen>
+    <dimen name="navigation_view_user_text_view_margin_bottom">8dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="cards_margin">16dp</dimen>
+    <dimen name="cards_elevation">4dp</dimen>
+
+    <!-- RelativeLayoutFragment -->
+    <dimen name="relative_layout_center_label_text_size">30sp</dimen>
+
+    <!-- FlexibleFragment -->
+    <dimen name="flexible_fragment_single_layout_title_text_size">32sp</dimen>
+    <dimen name="flexible_fragment_dual_layout_margin">10dp</dimen>
+
+
 </resources>

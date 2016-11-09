@@ -9,7 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+    RelativeLayoutFragment.OnRelativeLayoutInteraction{
 
 
     private Toolbar mToolbar;
@@ -23,7 +24,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initToolbar();
+        initViews();
+        setupNavigationView();
+        showInitialFragment();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+
+        return super.onCreateOptionsMenu(menu);
+        }
 
     private void initToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -45,8 +56,28 @@ public class MainActivity extends AppCompatActivity {
                 // creates call to onPrepareOptionsMenu()
             }
         };
-        mDrawer.addDrawerListener(toogle);
-        toogle.syncState();
+        mDrawer.addDrawerListener(toggle);
+        toggle.syncState();
         mNavigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void showInitialFragment(){showLinearLayoutFragment();}
+
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        int navigationDrawerSelectedItem = item.getItemId();
+
+        switch (navigationDrawerSelectedItem){
+            case R.id.nav_linear_layout:
+                showLinearLayoutFragment();
+                break;
+                case R.id.nav_relative_layout:
+                    showRelativeLayoutFragment();
+                    break;
+            case R.id.nav_flexible_layout:
+                showFlexibleLayoutFragment();
+                break;
+        }
+
     }
 }

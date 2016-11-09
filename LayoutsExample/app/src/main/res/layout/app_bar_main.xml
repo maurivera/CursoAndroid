@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_coordinator_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@id/main_coordinator_layout"
-    layout_height="match_parent"
-    layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.android.userinterfaceexample.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:elevation="4dp">
+        app:elevation="4dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <include layout="@layout/toolbar"></include>
-
+        <include layout="@layout/toolbar"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main"></include>
+    <include layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>
