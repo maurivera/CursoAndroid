@@ -1,5 +1,6 @@
 package personal.layoutsexample;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import android.app.Fragment;
@@ -24,7 +25,7 @@ import android.widget.Toast;
 
 /**/
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    //https://materialdesignicons.com/
     private Toolbar mToolbar;
     private TextView mTextViewToolbarTitle;
     private DrawerLayout mDrawer;
@@ -142,5 +143,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void shareInfo() {
+        Intent shareIntent = new Intent();
     }
 }
