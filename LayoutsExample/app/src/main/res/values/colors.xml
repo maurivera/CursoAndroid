@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackgroundColor">#CFCCCC</color>
-    <color name="transparent">#000000000</color>
+    <color name="transparent">#00000000</color>
 
 
     <color name="navigation_view_background_color">#1F1F1F</color>
