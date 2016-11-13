@@ -98,21 +98,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showLinearLayoutFragment() {
-        updateToolbarTitle("Linear Layout");
-        Fragment llf = LinearLayoutFragment.newInstance();
-        changeFragment(llf);
+        updateToolbarTitle("Linear Layout Example");
+        Fragment linearLayoutFragment = LinearLayoutFragment.newInstance();
+        changeFragment(linearLayoutFragment);
     }
 
     private void showRelativeLayoutFragment() {
-        updateToolbarTitle("Relative Layout");
-        Fragment llf = RelativeLayoutFragment.newInstance();
-        changeFragment(llf);
+        updateToolbarTitle("Relative Layout Example");
+        Fragment relativeLayoutFragment = RelativeLayoutFragment.newInstance();
+        changeFragment(relativeLayoutFragment);
     }
 
     private void showFlexibleLayoutFragment() {
         updateToolbarTitle("Flexible Fragment");
-        Fragment llf = FlexibleFragment.newInstance();
-        changeFragment(llf);
+        Fragment flexibleFragment = FlexibleFragment.newInstance();
+        changeFragment(flexibleFragment);
     }
 
     private void updateToolbarTitle(String toolbarTitle) {
@@ -143,6 +143,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void shareInfo() {
+
         Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.share_subject));
+        shareIntent.putExtra(Intent.EXTRA_TEXT,getString(R.string.share_body));
+        shareIntent.setType("text/plain");
+
+        if (shareIntent.resolveActivity(getPackageManager())!=null){
+            startActivity(shareIntent);
+        }
+
+
+
     }
 }
