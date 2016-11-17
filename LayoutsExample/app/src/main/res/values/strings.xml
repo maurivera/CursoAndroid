@@ -40,6 +40,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+     <string name="share_body">Cuerpo del mensaje</string>
+     <string name="share_subject">Asunto del mensaje</string>
 
 </resources>

@@ -146,14 +146,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.share_subject));
-        shareIntent.putExtra(Intent.EXTRA_TEXT,getString(R.string.share_body));
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_body));
         shareIntent.setType("text/plain");
 
-        if (shareIntent.resolveActivity(getPackageManager())!=null){
+        if (shareIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(shareIntent);
         }
-
 
 
     }
