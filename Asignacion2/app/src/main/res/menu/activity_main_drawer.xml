@@ -9,10 +9,10 @@
         <item
             android:id="@+id/nav_factorial_layout"
             android:checked="true"
-            android:title="texto 1" />
+            android:title="Factorial" />
         <item
             android:id="@+id/nav_fibonacci_layout"
-            android:title="texto 2"></item>
+            android:title="Fibonacci"></item>
 
     </group>
 </menu>

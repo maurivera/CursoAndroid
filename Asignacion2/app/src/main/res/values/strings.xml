@@ -13,9 +13,8 @@
     <string name="navigation_drawer_title">Navigation Drawer</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
-    <string name="navigation_drawer_linear_layout_title">Linear Layout</string>
-    <string name="navigation_drawer_relative_layout_title">Relative Layout</string>
-    <string name="navigation_drawer_flexible_fragment_title">Flexible Fragment</string>
+    <string name="navigation_drawer_factorial_layout_title">Linear Layout</string>
+    <string name="navigation_drawer_fibonacci_layout_title">Relative Layout</string>
 
     <!--Linear Layout Fragment-->
     <string name="linear_layout_fragment_title">Linear Layout Example</string>

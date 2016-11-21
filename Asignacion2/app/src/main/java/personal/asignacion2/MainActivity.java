@@ -96,13 +96,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showFactorialFragment() {
-        updateToolbarTitle("Factorial");
+        updateToolbarTitle("Factorial11");
         Fragment factorialFragment = FactorialLayoutFragment.newInstance();
         changeFragment(factorialFragment);
     }
 
     private void showFibonacciFragment() {
-        updateToolbarTitle("Fibonacci");
+        updateToolbarTitle("Fibonacci22");
         Fragment fibonacciFragment = FibonacciLayoutFragment.newInstance();
         changeFragment(fibonacciFragment);
     }
