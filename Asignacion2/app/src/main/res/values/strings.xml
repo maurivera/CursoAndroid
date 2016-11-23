@@ -1,48 +1,24 @@
 <resources>
     <string name="app_name">Asignacion2</string>
 
-
-
-
-    <!-- Se abre con CTRL / -->
-    <!-- Ctrl Shift N para buscar. -->
-    <!-- Color Primary es la barra de navegacion del toolbar -->
-    <!-- ColorAccent algunas vistas del view UI-->
-
     <!--Navigation Layout-->
-    <string name="navigation_drawer_title">Navigation Drawer</string>
+    <string name="navigation_drawer_title">Opciones matematicas</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="navigation_drawer_factorial_layout_title">Linear Layout</string>
     <string name="navigation_drawer_fibonacci_layout_title">Relative Layout</string>
 
-    <!--Linear Layout Fragment-->
-    <string name="linear_layout_fragment_title">Linear Layout Example</string>
-    <string name="linear_layout_fragment_card_1_label">Card 1</string>
-    <string name="linear_layout_fragment_card_2_label">Card 2</string>
-    <string name="linear_layout_fragment_card_3_label">Card 3</string>
+    <!--Factorial Fragment-->
+    <string name="factorial_fragment_title">Factorial</string>
 
     <!--Relative Layout Fragment-->
-    <string name="relative_layout_fragment_title">Relative Layout Example</string>
-    <string name="relative_layout_fragment_text_view_center_title">Relative Layout</string>
-    <string name="relative_layout_fragment_button_1_title">Button 1</string>
-    <string name="relative_layout_fragment_button_2_tittle">Button 2</string>
-
-    <!--Flexible Fragment -->
-    <string name="flexible_fragment_title">Flexible Fragment</string>
-    <string name="flexible_fragment_single_layout_title">Single Layout</string>
-    <string name="flexible_fragment_simple_toast">Simple Toast</string>
-    <string name="flexible_fragment_test_snackbar">SnackBar</string>
-    <string name="flexible_fragment_test_snackbar_action">Action</string>
-    <string name="flexible_fragment_test_snackbar_message">Restored</string>
+    <string name="fibonacci_fragment_title">Fibonacci</string>
 
     <!--Main Menu-->
     <string name="main_menu_settings_action">Settings</string>
     <string name="main_menu_test_action_message">Overflow Menu</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="share_body">Cuerpo del mensaje</string>
-    <string name="share_subject">Asunto del mensaje</string>
 
+    <string name="share_subject">Resultado de cálculo </string>
+    <string name="share_body">El resultado de la operación </string>
 </resources>

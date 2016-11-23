@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawer;
     private NavigationView mNavigationView;
     private CoordinatorLayout mMainCoordinatorLayout;
+    private int ActiveFragment; //1 factorial, 2 fibonacci
+    private Fragment MyActiveFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,15 +98,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showFactorialFragment() {
-        updateToolbarTitle("Factorial11");
-        Fragment factorialFragment = FactorialLayoutFragment.newInstance();
-        changeFragment(factorialFragment);
+        updateToolbarTitle(getString(R.string.factorial_fragment_title));
+        MyActiveFragment = FactorialLayoutFragment.newInstance();
+        changeFragment(MyActiveFragment);
+        ActiveFragment = 1; // factorial
     }
 
     private void showFibonacciFragment() {
-        updateToolbarTitle("Fibonacci22");
-        Fragment fibonacciFragment = FibonacciLayoutFragment.newInstance();
-        changeFragment(fibonacciFragment);
+        updateToolbarTitle(getString(R.string.fibonacci_fragment_title));
+        MyActiveFragment = FibonacciLayoutFragment.newInstance();
+        changeFragment(MyActiveFragment);
+        ActiveFragment = 2; // fibonacci
     }
 
     private void updateToolbarTitle(String toolbarTitle) {
@@ -119,10 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.action_share:
                 shareInfo();
@@ -132,11 +134,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void shareInfo() {
+        StringBuilder strSubject = new StringBuilder();
+        StringBuilder strBody = new StringBuilder();
 
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
-        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_body));
+
+        strSubject.append(getString(R.string.share_subject));
+        strBody.append(getString(R.string.share_body));
+
+        if (ActiveFragment == 1)
+        {
+            strSubject.append(getString(R.string.factorial_fragment_title));
+            strBody.append(getString(R.string.factorial_fragment_title));
+        }
+        else {
+            strSubject.append(getString(R.string.fibonacci_fragment_title));
+            strBody.append(getString(R.string.fibonacci_fragment_title));
+        }
+
+        strBody.append("de");
+
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,strSubject.toString() );
+        shareIntent.putExtra(Intent.EXTRA_TEXT, strBody.toString());
         shareIntent.setType("text/plain");
 
         if (shareIntent.resolveActivity(getPackageManager()) != null) {
