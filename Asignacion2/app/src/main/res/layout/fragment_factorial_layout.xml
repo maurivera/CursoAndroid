@@ -16,23 +16,31 @@ tools:context="personal.asignacion2.MainActivity">
     android:text="Favor ingresar un número para calcular factorial:"
     android:id="@+id/textViewEtiqueta" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/editTextNumeroACalcular"
+        android:inputType="number"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/textViewEtiqueta"
+        android:layout_alignParentStart="true" />
 <Button
     android:text="Calcular"
     android:layout_width="match_parent"
-    android:layout_height="55dp"
+    android:layout_height="50dp"
     android:id="@+id/btnCalculate"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="15dp"
     android:layout_below="@+id/editTextNumeroACalcular"
     android:layout_alignParentStart="true" />
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_marginTop="15dp"
-    android:id="@+id/editTextNumeroACalcular"
-    android:inputType="number"
-    android:background="@color/colorPrimary"
-    android:layout_below="@+id/textViewEtiqueta"
-    android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnCalculate"
+        android:textAlignment="center"
+        android:textSize="@dimen/result_text_size"
+        android:id="@+id/textViewResultado" />
 </RelativeLayout>

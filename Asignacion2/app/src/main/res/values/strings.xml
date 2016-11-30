@@ -19,6 +19,8 @@
     <string name="main_menu_test_action_message">Overflow Menu</string>
 
 
-    <string name="share_subject">Resultado de cálculo </string>
-    <string name="share_body">El resultado de la operación </string>
+    <string name="share_subject_Factorial">Resultado de cálculo Factorial</string>
+    <string name="share_subject_Fibonacci">Resultado de cálculo Fibonacci</string>
+    <string name="share_body">El resultado de la operación</string>
+    <string name="share_body_2">es</string>
 </resources>

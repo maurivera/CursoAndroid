@@ -16,15 +16,6 @@
         android:text="Favor ingresar un número para calcular fibonacci:"
         android:id="@+id/textViewEtiqueta" />
 
-    <Button
-        android:text="Calcular"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:id="@+id/btnCalculate"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/editTextNumeroACalcular"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -34,5 +25,23 @@
         android:background="@color/colorPrimary"
         android:layout_below="@+id/textViewEtiqueta"
         android:layout_alignParentStart="true" />
+    <Button
+        android:text="Calcular"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/btnCalculate"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/editTextNumeroACalcular"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnCalculate"
+        android:textAlignment="center"
+        android:textSize="@dimen/result_text_size"
+        android:id="@+id/textViewResultado" />
 
 </RelativeLayout>

@@ -10,13 +10,18 @@ import android.widget.EditText;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.TextView;
 
 import personal.asignacion2.R;
 
 public class FactorialLayoutFragment extends Fragment {
 
+   public long numeroacalcular;
+   public long miresultado;
+
     Button btnCalculate;
     EditText editTextNumeroACalcular;
+    TextView textViewResultado;
 
     public FactorialLayoutFragment() {
         // Required empty public constructor
@@ -43,7 +48,7 @@ public class FactorialLayoutFragment extends Fragment {
 
         btnCalculate = (Button) view.findViewById(R.id.btnCalculate);
         editTextNumeroACalcular = (EditText) view.findViewById(R.id.editTextNumeroACalcular);
-
+        textViewResultado = (TextView) view.findViewById(R.id.textViewResultado);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +58,13 @@ public class FactorialLayoutFragment extends Fragment {
                     return;
                 }
 
-                long numeroacalcular = Long.parseLong(editTextNumeroACalcular.getText().toString());
+                numeroacalcular = Long.parseLong(editTextNumeroACalcular.getText().toString());
                 FactorialClass miCalculadora = new FactorialClass(numeroacalcular);
 
-                long miresultado = miCalculadora.calculateFactorial();
+                miresultado = miCalculadora.calculateFactorial();
 
-                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                textViewResultado.setText(Long.toString(miresultado));
+                /*AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
                 alertDialog.setTitle("Resultado");
                 alertDialog.setMessage(Long.toString(miresultado));
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
@@ -68,7 +74,7 @@ public class FactorialLayoutFragment extends Fragment {
                                 editTextNumeroACalcular.setText("");
                             }
                         });
-                alertDialog.show();
+                alertDialog.show();*/
             }
         });
         return view;

@@ -140,20 +140,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
 
-        strSubject.append(getString(R.string.share_subject));
         strBody.append(getString(R.string.share_body));
+        strBody.append(" ");
 
         if (ActiveFragment == 1)
         {
-            strSubject.append(getString(R.string.factorial_fragment_title));
+            strSubject.append(getString(R.string.share_subject_Factorial));
+
             strBody.append(getString(R.string.factorial_fragment_title));
+            strBody.append(" ");
+            strBody.append(Long.toString(((FactorialLayoutFragment)MyActiveFragment).numeroacalcular));
+            strBody.append(" ");
+            strBody.append(getString(R.string.share_body_2));
+            strBody.append(" ");
+            strBody.append( Long.toString(((FactorialLayoutFragment)MyActiveFragment).miresultado));
         }
         else {
-            strSubject.append(getString(R.string.fibonacci_fragment_title));
-            strBody.append(getString(R.string.fibonacci_fragment_title));
-        }
+            strSubject.append(getString(R.string.share_subject_Fibonacci));
 
-        strBody.append("de");
+            strBody.append(getString(R.string.fibonacci_fragment_title));
+            strBody.append(" ");
+            strBody.append(Long.toString(((FibonacciLayoutFragment)MyActiveFragment).numeroacalcular));
+            strBody.append(" ");
+            strBody.append(getString(R.string.share_body_2));
+            strBody.append(" ");
+            strBody.append( Long.toString(((FibonacciLayoutFragment)MyActiveFragment).miresultado));
+        }
 
         shareIntent.putExtra(Intent.EXTRA_SUBJECT,strSubject.toString() );
         shareIntent.putExtra(Intent.EXTRA_TEXT, strBody.toString());
@@ -162,7 +174,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (shareIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(shareIntent);
         }
-
-
     }
 }

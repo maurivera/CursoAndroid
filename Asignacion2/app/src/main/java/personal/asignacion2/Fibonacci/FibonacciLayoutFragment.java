@@ -7,15 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.TextView;
 
 import personal.asignacion2.R;
 
 public class FibonacciLayoutFragment extends Fragment {
 
+  public  long numeroacalcular;
+  public  long miresultado;
+
     Button btnCalculate;
     EditText editTextNumeroACalcular;
+    TextView textViewResultado;
 
     public FibonacciLayoutFragment() {
         // Required empty public constructor
@@ -40,7 +46,7 @@ public class FibonacciLayoutFragment extends Fragment {
 
         btnCalculate = (Button) view.findViewById(R.id.btnCalculate);
         editTextNumeroACalcular = (EditText) view.findViewById(R.id.editTextNumeroACalcular);
-
+        textViewResultado = (TextView) view.findViewById(R.id.textViewResultado);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,12 +56,13 @@ public class FibonacciLayoutFragment extends Fragment {
                     return;
                 }
 
-                long numeroacalcular = Long.parseLong(editTextNumeroACalcular.getText().toString());
+                numeroacalcular = Long.parseLong(editTextNumeroACalcular.getText().toString());
                 FibonacciClass miCalculadora = new FibonacciClass(numeroacalcular);
 
-                long miresultado = miCalculadora.calculateFibonacci();
+                miresultado = miCalculadora.calculateFibonacci();
 
-                AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                textViewResultado.setText(Long.toString(miresultado));
+                /*AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
                 alertDialog.setTitle("Resultado");
                 alertDialog.setMessage(Long.toString(miresultado));
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
@@ -65,7 +72,7 @@ public class FibonacciLayoutFragment extends Fragment {
                                 editTextNumeroACalcular.setText("");
                             }
                         });
-                alertDialog.show();
+                alertDialog.show();*/
             }
         });
         return view;
