@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ProyectoFinal</string>
+
+    <!--Navigation Layout-->
+    <string name="navigation_drawer_title">Opciones matematicas</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="navigation_drawer_cities_list_title">Lista de ciudades</string>
+    <string name="navigation_drawer_about_title">Acerca de</string>
+
+    <!--Cities List Fragment-->
+    <string name="cities_list_fragment_title">Lista de ciudades</string>
+
+    <!--About Fragment-->
+    <string name="about_fragment_title">Acerca de</string>
+
+    <!--Main Menu-->
+    <string name="main_menu_settings_action">Settings</string>
+    <string name="main_menu_test_action_message">Overflow Menu</string>
+
+</resources>

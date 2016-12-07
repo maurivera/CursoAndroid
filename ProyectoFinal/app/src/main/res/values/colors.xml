@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackgroundColor">#CFCCCC</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="navigation_view_background_color">#1F1F1F</color>
+    <color name="navigation_view_header_background_color">#423E3E</color>
+    <color name="navigation_view_item_selected_color">#faf075</color>
+
+    <color name="color_card_1">#BD9EEB</color>
+    <color name="color_card_2">#657FB7</color>
+    <color name="color_card_3">#659FB7</color>
+
+    <color name="color_button_1">#BD9EEB</color>
+    <color name="color_button_2">#657FB7</color>
+
+
+</resources>
+
