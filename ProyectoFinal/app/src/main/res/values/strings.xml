@@ -18,4 +18,7 @@
     <string name="main_menu_settings_action">Settings</string>
     <string name="main_menu_test_action_message">Overflow Menu</string>
 
+    <string name="toast_message">Se despliega un texto significativo, simplemente para comprobar que el ítem tiene una acción relacionada.</string>
+
+
 </resources>

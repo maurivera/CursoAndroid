@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:proyectofinal="http://schemas.android.com/apk/res-auto">
+
+
     <item
         android:id="@+id/action_setting"
         android:icon="@drawable/setting"
-        android:showAsAction="always"
-        android:title="setting"></item>
+        android:title="Setting"
+        android:visible="true"
+        proyectofinal:showAsAction="always"></item>
+
 </menu>
+
+
+    <!--
+<item name="actionMenuTextColor">@color/white</item>
+<item name="android:actionMenuTextColor">@color/white</item>
+</style>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:**yourapp**="http://schemas.android.com/apk/res-auto" >
+<item android:id="@+id/action_search"
+android:icon="@drawable/ic_action_search"
+android:title="@string/action_search"
+    **yourapp**:showAsAction="ifRoom"  />
+    ...
+    </menu>
+
+    -->

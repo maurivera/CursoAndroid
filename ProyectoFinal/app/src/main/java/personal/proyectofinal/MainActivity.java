@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import personal.proyectofinal.About.AboutFragment;
 import personal.proyectofinal.CitiesList.CitiesListFragment;
@@ -124,11 +125,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_setting:
-              // shareInfo();
+               showMessageInScreen();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
-
+  private void  showMessageInScreen(){
+       Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT).show();
+  }
 
 }

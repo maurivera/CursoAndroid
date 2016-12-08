@@ -1,10 +1,8 @@
 <resources>
 
-    <!-- ctrol shift n para busqueda -->
-    <!--ctrl slash para comentar -->
-    <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+
 
 
         <item name="windowActionBar">false</item>
@@ -20,7 +18,7 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"></style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
 
 
 </resources>
