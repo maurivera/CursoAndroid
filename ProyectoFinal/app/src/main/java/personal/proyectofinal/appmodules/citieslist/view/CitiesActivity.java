@@ -1,17 +1,20 @@
-package personal.proyectofinal;
+package personal.proyectofinal.appmodules.citieslist.view;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-
+import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,11 +22,28 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import personal.proyectofinal.About.AboutFragment;
-import personal.proyectofinal.CitiesList.CitiesListFragment;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import personal.proyectofinal.R;
+import personal.proyectofinal.appmodules.citieslist.CitiesContract;
+import personal.proyectofinal.model.City;
 
+import personal.proyectofinal.R;
+import personal.proyectofinal.appmodules.citieslist.CitiesContract;
+import personal.proyectofinal.appmodules.citieslist.adapter.CitiesListAdapter;
+import personal.proyectofinal.appmodules.citydetail.view.CityDetailActivity;
+import personal.proyectofinal.appmodules.citieslist.interactor.GenerateCitiesInteractor;
+import personal.proyectofinal.appmodules.citieslist.interactor.LoadCitiesInteractor;
+import personal.proyectofinal.appmodules.citieslist.presenter.CitiesPresenter;
+import personal.proyectofinal.model.City;
+
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import io.realm.Realm;
+
+public class CitiesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CitiesContract.View
+{
     //https://materialdesignicons.com/
     private Toolbar mToolbar;
     private TextView mTextViewToolbarTitle;
@@ -33,10 +53,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private int ActiveFragment; //1 lista de ciudades, 2 acerca de
     private Fragment MyActiveFragment;
 
+    public static final String CONTACT_ID_KEY = "CONTACT_ID_KEY";
+    @BindView(R.id.cities_recycler_view)
+    RecyclerView mCitiesRecyclerView;
+    @BindView(R.id.cities_swipe_refresh_layout)
+    SwipeRefreshLayout mSwipeRefreshLayout;
+    private LinearLayoutManager mLayoutManager;
+    private CitiesListAdapter mCitiesListAdapter;
+    private CitiesPresenter mCitiesPresenter;
+    private LoadCitiesInteractor mLoadCitiesInteractor;
+    private GenerateCitiesInteractor mGenerateCitiesInteractor;
+    private Realm mRealm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cities);
         initToolbar();
         initViews();
         setupNavigationView();
@@ -116,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void changeFragment(Fragment newFragment) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.content_main_activity, newFragment);
+        fragmentTransaction.replace(R.id.content_cities_activity, newFragment);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
@@ -125,13 +157,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_setting:
-               showMessageInScreen();
+                showMessageInScreen();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
-  private void  showMessageInScreen(){
-       Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT).show();
-  }
 
+    private void showMessageInScreen() {
+        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void hideSwipeRefreshLayout() {
+        mSwipeRefreshLayout.setRefreshing(false);
+    }
+
+
+    @Override
+    public void showErrorLoadingCitiesToast(String errorMessage) {
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showCitiesList(ArrayList<City> citiesList) {
+        mCitiesListAdapter.setCitiesList(citiesList);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mRealm.close();
+    }
 }

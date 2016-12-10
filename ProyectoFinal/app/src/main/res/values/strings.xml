@@ -20,5 +20,18 @@
 
     <string name="toast_message">Se despliega un texto significativo, simplemente para comprobar que el ítem tiene una acción relacionada.</string>
 
+    <!-- Transitions -->
+    <string name="city_image_transition">Image</string>
+    <string name="city_name_transition">Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_cities">CitiesActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- CitiesList -->
+    <string name="cities_list_error_loading_cities_msg">There was an error loading your cities.</string>
+
+
 
 </resources>
