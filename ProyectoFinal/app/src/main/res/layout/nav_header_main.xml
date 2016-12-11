@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="@dimen/navigation_view_user_text_view_margin_top"
-        android:text="Navigation Drawer"
+        android:text="@string/navigation_drawer_title"
         android:textSize="18sp" />
 
 </LinearLayout>

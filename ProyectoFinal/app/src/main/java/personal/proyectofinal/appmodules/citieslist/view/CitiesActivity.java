@@ -3,6 +3,7 @@ package personal.proyectofinal.appmodules.citieslist.view;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -13,8 +14,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,8 +41,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 
-public class CitiesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CitiesContract.View
-{
+public class CitiesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //https://materialdesignicons.com/
     private Toolbar mToolbar;
     private TextView mTextViewToolbarTitle;
@@ -53,17 +51,7 @@ public class CitiesActivity extends AppCompatActivity implements NavigationView.
     private int ActiveFragment; //1 lista de ciudades, 2 acerca de
     private Fragment MyActiveFragment;
 
-    public static final String CONTACT_ID_KEY = "CONTACT_ID_KEY";
-    @BindView(R.id.cities_recycler_view)
-    RecyclerView mCitiesRecyclerView;
-    @BindView(R.id.cities_swipe_refresh_layout)
-    SwipeRefreshLayout mSwipeRefreshLayout;
-    private LinearLayoutManager mLayoutManager;
-    private CitiesListAdapter mCitiesListAdapter;
-    private CitiesPresenter mCitiesPresenter;
-    private LoadCitiesInteractor mLoadCitiesInteractor;
-    private GenerateCitiesInteractor mGenerateCitiesInteractor;
-    private Realm mRealm;
+    public static Context sContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +61,9 @@ public class CitiesActivity extends AppCompatActivity implements NavigationView.
         initViews();
         setupNavigationView();
         showInitialFragment();
+
+
+        sContext = getApplicationContext();
     }
 
     @Override
@@ -165,28 +156,5 @@ public class CitiesActivity extends AppCompatActivity implements NavigationView.
 
     private void showMessageInScreen() {
         Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT).show();
-    }
-
-
-    @Override
-    public void hideSwipeRefreshLayout() {
-        mSwipeRefreshLayout.setRefreshing(false);
-    }
-
-
-    @Override
-    public void showErrorLoadingCitiesToast(String errorMessage) {
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void showCitiesList(ArrayList<City> citiesList) {
-        mCitiesListAdapter.setCitiesList(citiesList);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mRealm.close();
     }
 }

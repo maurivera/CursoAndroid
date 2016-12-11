@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">ProyectoFinal</string>
+    <string name="app_name">City weather</string>
 
     <!--Navigation Layout-->
-    <string name="navigation_drawer_title">Opciones matematicas</string>
+    <string name="navigation_drawer_title">City weather</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="navigation_drawer_cities_list_title">Lista de ciudades</string>
@@ -14,10 +14,7 @@
     <!--About Fragment-->
     <string name="about_fragment_title">Acerca de</string>
 
-    <!--Main Menu-->
-    <string name="main_menu_settings_action">Settings</string>
-    <string name="main_menu_test_action_message">Overflow Menu</string>
-
+    <!--Setting action-->
     <string name="toast_message">Se despliega un texto significativo, simplemente para comprobar que el ítem tiene una acción relacionada.</string>
 
     <!-- Transitions -->
@@ -32,6 +29,11 @@
     <!-- CitiesList -->
     <string name="cities_list_error_loading_cities_msg">There was an error loading your cities.</string>
 
+    <!-- About -->
 
+    <string name="ApplicationName">City weather</string>
+    <string name="ApplicationDescription">La aplicación es una aplicación del clima, diseñada para mostrar las condiciones climáticas de una ciudad en particular. La información es obtenida de la plataforma de información: http://openweathermap.org. Es aplicación fue realizada como proyecto final para el curso de desarrollo de aplicaciones en Android.</string>
+    <string name="ApplicationAuthor">Alumno: Mauricio Rivera Fernández</string>
+    <string name="ApplicationYear">Diciembre 2016</string>
 
 </resources>
