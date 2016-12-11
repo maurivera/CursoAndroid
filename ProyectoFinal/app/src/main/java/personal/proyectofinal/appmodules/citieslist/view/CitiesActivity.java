@@ -42,6 +42,9 @@ import butterknife.ButterKnife;
 import io.realm.Realm;
 
 public class CitiesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String CITY_ID_KEY = "CITY_ID_KEY";
+
     //https://materialdesignicons.com/
     private Toolbar mToolbar;
     private TextView mTextViewToolbarTitle;

@@ -34,7 +34,6 @@ import io.realm.Realm;
 
 public class CitiesListFragment extends Fragment implements CitiesContract.View {
 
-    public static final String CITY_ID_KEY = "CITY_ID_KEY";
     @BindView(R.id.cities_recycler_view)
     RecyclerView mCitiesRecyclerView;
     @BindView(R.id.cities_swipe_refresh_layout)
@@ -104,7 +103,7 @@ public class CitiesListFragment extends Fragment implements CitiesContract.View 
 
     private void startCityDetail(City city, ImageView cityImageView, TextView cityNameTextView) {
         Intent intent = new Intent(this.getActivity(), CityDetailActivity.class);
-        intent.putExtra(CITY_ID_KEY, city);
+        intent.putExtra(((CitiesActivity) this.getActivity()).CITY_ID_KEY, city);
         Pair<View, String> imageViewCityPair = Pair.create((View) cityImageView, getString(R.string.city_image_transition));
         Pair<View, String> textViewCityNamePair = Pair.create((View) cityNameTextView, getString(R.string.city_name_transition));
         ActivityOptionsCompat options = ActivityOptionsCompat.

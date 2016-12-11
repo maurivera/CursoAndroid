@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_city_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="personal.proyectofinal.appmodules.citydetail.view.CityDetailActivity">
+    tools:context=".appmodules.citydetail.view.CityDetailActivity">
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/image_view_city"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_image_view_height"
+        android:src="@drawable/cloud"
+        android:transitionName="@string/city_image_transition" />
+
+    <TextView
+        android:id="@+id/text_view_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_detail_name_label"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_divider_height"
+        android:layout_marginBottom="@dimen/city_detail_divider_margin_bottom"
+        android:background="@color/divider_color"
+        android:orientation="horizontal"></View>
+
+    <TextView
+        android:id="@+id/text_view_city_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
+        android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
+        android:text="Cartago"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:transitionName="@string/city_name_transition" />
+
+</LinearLayout>

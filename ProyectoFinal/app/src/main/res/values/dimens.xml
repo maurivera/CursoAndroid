@@ -32,11 +32,20 @@
     <dimen name="result_text_size">30sp</dimen>
 
 
-    <!-- Contact List Row -->
+    <!-- City List Row -->
     <dimen name="city_row_height">80dp</dimen>
     <dimen name="city_row_image_margin_left">16dp</dimen>
     <dimen name="city_row_name_margin_left">16dp</dimen>
     <dimen name="city_row_name_text_size">18sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+
+
+    <!-- City Detail -->
+    <dimen name="city_detail_image_view_height">150dp</dimen>
+    <dimen name="city_detail_labels_text_size">18sp</dimen>
+    <dimen name="city_detail_divider_height">1dp</dimen>
+    <dimen name="city_detail_divider_margin_bottom">5dp</dimen>
+    <dimen name="city_detail_info_labels_margin_left">10dp</dimen>
+    <dimen name="city_detail_info_labels_margin_bottom">16dp</dimen>
 </resources>

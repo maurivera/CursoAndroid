@@ -1,15 +1,18 @@
 package personal.proyectofinal.appmodules.citydetail;
 
+import personal.proyectofinal.model.City;
+
 /**
  * Created by RIVARA on 12/08/2016.
  */
 
 public interface CityDetailContract {
     interface View{
-        void showCityInfo(String name, String email, String telephone);
+        void showCityInfo(String name);
     }
 
     interface Presenter{
-        //void loadContactInfo(Contact contact);
+        void loadCityInfo(City city);
     }
+
 }

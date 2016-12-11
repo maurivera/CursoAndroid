@@ -29,6 +29,9 @@
     <!-- CitiesList -->
     <string name="cities_list_error_loading_cities_msg">There was an error loading your cities.</string>
 
+    <!-- City Detail -->
+    <string name="city_detail_name_label">Ciudad</string>
+
     <!-- About -->
 
     <string name="ApplicationName">City weather</string>
