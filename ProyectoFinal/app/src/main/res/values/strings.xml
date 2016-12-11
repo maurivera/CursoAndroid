@@ -18,8 +18,12 @@
     <string name="toast_message">Se despliega un texto significativo, simplemente para comprobar que el ítem tiene una acción relacionada.</string>
 
     <!-- Transitions -->
-    <string name="city_image_transition">Image</string>
-    <string name="city_name_transition">Name</string>
+    <string name="city_image_transition">Imagen</string>
+    <string name="city_name_transition">Ciudad</string>
+    <string name="city_humidity_transition">Humedad</string>
+    <string name="city_temperature_transition">Temperatura</string>
+    <string name="city_wind_speed_transition">Velocidad del viento</string>
+    <string name="city_conditions_transition">Condiciones</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -31,9 +35,12 @@
 
     <!-- City Detail -->
     <string name="city_detail_name_label">Ciudad</string>
+    <string name="city_detail_humidity_label">Humedad</string>
+    <string name="city_detail_temperature_label">Temperatura</string>
+    <string name="city_detail_wind_speed_label">Velocidad del viento</string>
+    <string name="city_detail_conditions_label">Condiciones</string>
 
     <!-- About -->
-
     <string name="ApplicationName">City weather</string>
     <string name="ApplicationDescription">La aplicación es una aplicación del clima, diseñada para mostrar las condiciones climáticas de una ciudad en particular. La información es obtenida de la plataforma de información: http://openweathermap.org. Es aplicación fue realizada como proyecto final para el curso de desarrollo de aplicaciones en Android.</string>
     <string name="ApplicationAuthor">Alumno: Mauricio Rivera Fernández</string>

@@ -40,8 +40,130 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
         android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
-        android:text="Cartago"
+        android:text=""
         android:textSize="@dimen/city_detail_labels_text_size"
         android:transitionName="@string/city_name_transition" />
 
+    <TextView
+        android:id="@+id/text_view_humidity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_detail_humidity_label"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_divider_height"
+        android:layout_marginBottom="@dimen/city_detail_divider_margin_bottom"
+        android:background="@color/divider_color"
+        android:orientation="horizontal"></View>
+
+    <TextView
+        android:id="@+id/text_view_city_humidity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
+        android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
+        android:text=""
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:transitionName="@string/city_humidity_transition" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/text_view_temperature_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_detail_temperature_label"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_divider_height"
+        android:layout_marginBottom="@dimen/city_detail_divider_margin_bottom"
+        android:background="@color/divider_color"
+        android:orientation="horizontal"></View>
+
+    <TextView
+        android:id="@+id/text_view_city_temperature_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
+        android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
+        android:text=""
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:transitionName="@string/city_temperature_transition" />
+
+
+
+
+    <TextView
+        android:id="@+id/text_view_wind_speed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_detail_wind_speed_label"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_divider_height"
+        android:layout_marginBottom="@dimen/city_detail_divider_margin_bottom"
+        android:background="@color/divider_color"
+        android:orientation="horizontal"></View>
+
+    <TextView
+        android:id="@+id/text_view_city_wind_speed_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
+        android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
+        android:text=""
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:transitionName="@string/city_wind_speed_transition" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/text_view_conditions_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_detail_conditions_label"
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/city_detail_divider_height"
+        android:layout_marginBottom="@dimen/city_detail_divider_margin_bottom"
+        android:background="@color/divider_color"
+        android:orientation="horizontal"></View>
+
+    <TextView
+        android:id="@+id/text_view_city_conditions_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/city_detail_info_labels_margin_bottom"
+        android:layout_marginLeft="@dimen/city_detail_info_labels_margin_left"
+        android:text=""
+        android:textSize="@dimen/city_detail_labels_text_size"
+        android:transitionName="@string/city_conditions_transition" />
 </LinearLayout>
