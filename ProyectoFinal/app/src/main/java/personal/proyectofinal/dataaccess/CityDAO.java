@@ -4,12 +4,16 @@ import java.util.ArrayList;
 
 import io.realm.Realm;
 import personal.proyectofinal.model.City;
+import personal.proyectofinal.networking.CitiesWeatherService;
+import personal.proyectofinal.networking.WeatherApiConstants;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by RIVARA on 12/10/2016.
  */
 
-public class CityDAO {
+public class CityDAO  {
 
     private Realm mRealm;
 

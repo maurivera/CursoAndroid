@@ -31,7 +31,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- CitiesList -->
-    <string name="cities_list_error_loading_cities_msg">There was an error loading your cities.</string>
+    <string name="cities_list_error_loading_cities_msg">Hubo un error cargando las ciudades.</string>
 
     <!-- City Detail -->
     <string name="city_detail_name_label">Ciudad</string>
@@ -45,9 +45,5 @@
     <string name="ApplicationDescription">La aplicación es una aplicación del clima, diseñada para mostrar las condiciones climáticas de una ciudad en particular. La información es obtenida de la plataforma de información: http://openweathermap.org. Es aplicación fue realizada como proyecto final para el curso de desarrollo de aplicaciones en Android.</string>
     <string name="ApplicationAuthor">Alumno: Mauricio Rivera Fernández</string>
     <string name="ApplicationYear">Diciembre 2016</string>
-
-    <string name="error_getting_data">Error obteniendo información</string>
-
-
 
 </resources>

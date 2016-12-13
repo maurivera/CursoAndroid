@@ -145,8 +145,6 @@ public class CitiesListFragment extends Fragment implements CitiesContract.View,
                 .build();
 
         mWeatherService = retrofit.create(CitiesWeatherService.class);
-
-        // mCitiesPresenter.getCitiesWeather();
     }
 
     @Override
@@ -169,13 +167,12 @@ public class CitiesListFragment extends Fragment implements CitiesContract.View,
         WeatherApiResponse weatherApiResponse = response.body();
         List<City> citiesList = weatherApiResponse.getList();
 
-        showCitiesList(new ArrayList<City>(citiesList));
-
-    }
+        mCitiesPresenter.onCitiesListLoadedSuccessful(new ArrayList<City>(citiesList));
+        }
 
     @Override
     public void onFailure(Call<WeatherApiResponse> call, Throwable t) {
-        Toast.makeText(this.getActivity(), getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
+        mCitiesPresenter.onErrorLoadingCitiesList();
     }
 
     //@Override

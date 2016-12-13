@@ -14,9 +14,13 @@ import java.util.ArrayList;
 import personal.proyectofinal.model.WeatherApiResponse;
 import personal.proyectofinal.networking.WeatherApiConstants;
 
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by RIVARA on 12/10/2016.
@@ -28,7 +32,7 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
     private CitiesContract.View mCitiesView;
     private LoadCitiesInteractor mLoadCitiesInteractor;
     private GenerateCitiesInteractor mGenerateCitiesInteractor;
-   private  CitiesWeatherService mWeatherService;
+    private CitiesWeatherService mWeatherService;
 
     public CitiesPresenter(Context context, CitiesContract.View citiesView,
                            LoadCitiesInteractor loadCitiesInteractor,
@@ -38,7 +42,7 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
         mCitiesView = citiesView;
         mLoadCitiesInteractor = loadCitiesInteractor;
         mGenerateCitiesInteractor = generateCitiesInteractor;
-        mWeatherService =weatherService;
+        mWeatherService = weatherService;
     }
 
     @Override
@@ -67,8 +71,6 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
                 WeatherApiConstants.LAT, WeatherApiConstants.LON,
                 WeatherApiConstants.CONT, WeatherApiConstants.APP_ID, WeatherApiConstants.UNIT
         );
-        call.enqueue((Callback<WeatherApiResponse>)mCitiesView);
+        call.enqueue((Callback<WeatherApiResponse>) mCitiesView);
     }
-
-
 }
