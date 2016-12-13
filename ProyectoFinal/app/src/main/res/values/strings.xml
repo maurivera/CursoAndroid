@@ -46,4 +46,8 @@
     <string name="ApplicationAuthor">Alumno: Mauricio Rivera Fernández</string>
     <string name="ApplicationYear">Diciembre 2016</string>
 
+    <string name="error_getting_data">Error obteniendo información</string>
+
+
+
 </resources>

@@ -7,10 +7,16 @@ import personal.proyectofinal.appmodules.citieslist.CitiesContract;
 import personal.proyectofinal.appmodules.citieslist.interactor.GenerateCitiesInteractor;
 import personal.proyectofinal.appmodules.citieslist.interactor.LoadCitiesInteractor;
 import personal.proyectofinal.model.City;
+import personal.proyectofinal.networking.CitiesWeatherService;
 
 import java.util.ArrayList;
 
-import java.util.ArrayList;
+import personal.proyectofinal.model.WeatherApiResponse;
+import personal.proyectofinal.networking.WeatherApiConstants;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 /**
  * Created by RIVARA on 12/10/2016.
@@ -22,14 +28,17 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
     private CitiesContract.View mCitiesView;
     private LoadCitiesInteractor mLoadCitiesInteractor;
     private GenerateCitiesInteractor mGenerateCitiesInteractor;
+   private  CitiesWeatherService mWeatherService;
 
     public CitiesPresenter(Context context, CitiesContract.View citiesView,
                            LoadCitiesInteractor loadCitiesInteractor,
-                           GenerateCitiesInteractor generateCitiesInteractor) {
+                           GenerateCitiesInteractor generateCitiesInteractor,
+                           CitiesWeatherService weatherService) {
         mContext = context;
         mCitiesView = citiesView;
         mLoadCitiesInteractor = loadCitiesInteractor;
         mGenerateCitiesInteractor = generateCitiesInteractor;
+        mWeatherService =weatherService;
     }
 
     @Override
@@ -52,5 +61,14 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
     public void onErrorLoadingCitiesList() {
         mCitiesView.showErrorLoadingCitiesToast(mContext.getString(R.string.cities_list_error_loading_cities_msg));
     }
+
+    public void getCitiesWeather() {
+        Call<WeatherApiResponse> call = mWeatherService.getCitiesWeather(
+                WeatherApiConstants.LAT, WeatherApiConstants.LON,
+                WeatherApiConstants.CONT, WeatherApiConstants.APP_ID, WeatherApiConstants.UNIT
+        );
+        call.enqueue((Callback<WeatherApiResponse>)mCitiesView);
+    }
+
 
 }

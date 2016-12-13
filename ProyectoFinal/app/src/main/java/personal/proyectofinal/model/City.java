@@ -3,6 +3,9 @@ package personal.proyectofinal.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import io.realm.RealmObject;
 
 /**
@@ -23,8 +26,33 @@ public class City extends RealmObject implements Parcelable {
         }
     };
 
+    @SerializedName("id")
+    @Expose
     private int id;
+    @SerializedName("name")
+    @Expose
     private String name;
+    /*@SerializedName("coord")
+    @Expose
+    private Coord coord;
+    @SerializedName("main")
+    @Expose
+    private Main main;
+    @SerializedName("dt")
+    @Expose
+    private Integer dt;
+    @SerializedName("wind")
+    @Expose
+    private Wind wind;
+    @SerializedName("sys")
+    @Expose
+    private Sys sys;
+    @SerializedName("clouds")
+    @Expose
+    private Clouds clouds;
+    @SerializedName("weather")
+    @Expose
+    private java.util.List<Weather> weather = null;*/
 
     public City() {
     }
@@ -39,18 +67,30 @@ public class City extends RealmObject implements Parcelable {
         name = in.readString();
     }
 
-    public int getId() {
+    /**
+     * @return The id
+     */
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     * @param id The id
+     */
+    public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * @return The name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name The name
+     */
     public void setName(String name) {
         this.name = name;
     }
