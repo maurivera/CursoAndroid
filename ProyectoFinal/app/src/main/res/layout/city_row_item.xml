@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/city_row_height">
+    android:layout_height="@dimen/city_row_height"
+    android:orientation="horizontal">
 
     <ImageView
-        android:transitionName="@string/city_image_transition"
+        android:id="@+id/image_view_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/cloud"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/city_row_image_margin_left"
-        android:id="@+id/image_view_city" />
+        android:background="@drawable/cloud"
+        android:tint="@color/textColorPrimary"
+        android:transitionName="@string/city_image_transition" />
 
     <TextView
-        android:transitionName="@string/city_name_transition"
+        android:id="@+id/text_view_city_name_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Francia"
-        android:layout_marginLeft="@dimen/city_row_name_margin_left"
-        android:textSize="@dimen/city_row_name_text_size"
-        android:id="@+id/text_view_city_name_value"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image_view_city" />
-
+        android:layout_marginLeft="@dimen/city_row_name_margin_left"
+        android:layout_toEndOf="@+id/image_view_city"
+        android:text="Francia"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/city_row_name_text_size"
+        android:transitionName="@string/city_name_transition" />
 
 
 </RelativeLayout>

@@ -17,8 +17,9 @@ public interface CitiesContract {
     }
 
     interface Presenter{
-        void generateRandomCities();
-        void loadCities();
+        //void generateRandomCities();
+        //void loadCities();
+        void getCitiesWeather();
     }
 
     interface GenerateCitiesInteractor{

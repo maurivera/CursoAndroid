@@ -45,14 +45,23 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
         mWeatherService = weatherService;
     }
 
-    @Override
-    public void generateRandomCities() {
-        mGenerateCitiesInteractor.generateCitiesInDatabase();
-    }
+    //@Override
+    //public void generateRandomCities() {
+        //mGenerateCitiesInteractor.generateCitiesInDatabase();
+    //}
+
+    //@Override
+    //public void loadCities() {
+        //mLoadCitiesInteractor.loadCitiesFromDatabase(this);
+    //}
 
     @Override
-    public void loadCities() {
-        mLoadCitiesInteractor.loadCitiesFromDatabase(this);
+    public void getCitiesWeather() {
+        Call<WeatherApiResponse> call = mWeatherService.getCitiesWeather(
+                WeatherApiConstants.LAT, WeatherApiConstants.LON,
+                WeatherApiConstants.CONT, WeatherApiConstants.APP_ID, WeatherApiConstants.UNIT
+        );
+        call.enqueue((Callback<WeatherApiResponse>) mCitiesView);
     }
 
     @Override
@@ -64,13 +73,5 @@ public class CitiesPresenter implements CitiesContract.Presenter, CitiesContract
     @Override
     public void onErrorLoadingCitiesList() {
         mCitiesView.showErrorLoadingCitiesToast(mContext.getString(R.string.cities_list_error_loading_cities_msg));
-    }
-
-    public void getCitiesWeather() {
-        Call<WeatherApiResponse> call = mWeatherService.getCitiesWeather(
-                WeatherApiConstants.LAT, WeatherApiConstants.LON,
-                WeatherApiConstants.CONT, WeatherApiConstants.APP_ID, WeatherApiConstants.UNIT
-        );
-        call.enqueue((Callback<WeatherApiResponse>) mCitiesView);
     }
 }
