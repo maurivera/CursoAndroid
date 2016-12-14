@@ -21,7 +21,7 @@ public class CityDAO  {
         mRealm = realm;
     }
 
-    public void saveCitiesList(final ArrayList<City> citiesList) {
+    /*public void saveCitiesList(final ArrayList<City> citiesList) {
         mRealm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -44,15 +44,15 @@ public class CityDAO  {
 
             }
         });
-    }
+    }*/
 
-    public ArrayList<City> getCitiesList() {
+    /*public ArrayList<City> getCitiesList() {
         ArrayList<City> citiesList = new ArrayList<>(mRealm.where(City.class).findAll());
         return citiesList;
-    }
+    }*/
 
-    public boolean areCitiesAvailable() {
+    /*public boolean areCitiesAvailable() {
         return mRealm.where(City.class).count() > 0;
-    }
+    }*/
 
 }

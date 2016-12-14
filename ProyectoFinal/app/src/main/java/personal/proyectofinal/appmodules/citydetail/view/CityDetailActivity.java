@@ -15,8 +15,9 @@ import butterknife.ButterKnife;
 
 public class CityDetailActivity extends AppCompatActivity implements CityDetailContract.View {
 
-    @BindView(R.id.text_view_city_name_value)
-    TextView mTextViewName;
+    @BindView(R.id.text_view_city_name_value) TextView mTextViewName;
+    @BindView(R.id.text_view_city_temperature_value) TextView mTextViewTemperature;
+
     private CityDetailPresenter mCityDetailPresenter;
 
     @Override
@@ -38,8 +39,9 @@ public class CityDetailActivity extends AppCompatActivity implements CityDetailC
     }
 
     @Override
-    public void showCityInfo(String name) {
+    public void showCityInfo(String name, String temperature) {
         mTextViewName.setText(name);
+        mTextViewTemperature.setText(temperature);
     }
 
     @Override

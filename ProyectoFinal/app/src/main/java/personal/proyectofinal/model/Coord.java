@@ -1,5 +1,6 @@
 package personal.proyectofinal.model;
 
+import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
@@ -9,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by RIVARA on 12/08/2016.
  */
 
-public class Coord {
+public class Coord implements Parcelable {
 
     @SerializedName("lon")
     @Expose
@@ -54,4 +55,13 @@ public class Coord {
         this.lat = lat;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+    }
 }

@@ -37,6 +37,9 @@
     <dimen name="city_row_image_margin_left">16dp</dimen>
     <dimen name="city_row_name_margin_left">16dp</dimen>
     <dimen name="city_row_name_text_size">20sp</dimen>
+
+    <dimen name="city_row_temperature_margin_right">25dp</dimen>
+    <dimen name="city_row_temperature_text_size">30sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
 

@@ -17,6 +17,6 @@ public class CityDetailPresenter implements CityDetailContract.Presenter {
 
     @Override
     public void loadCityInfo(City city) {
-        mCityDetailView.showCityInfo(city.getName());
+        mCityDetailView.showCityInfo(city.getName(), String.valueOf(city.getMain().getTemp()));
     }
 }

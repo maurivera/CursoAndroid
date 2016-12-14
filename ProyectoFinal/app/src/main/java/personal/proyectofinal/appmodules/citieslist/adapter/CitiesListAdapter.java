@@ -15,40 +15,18 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import personal.proyectofinal.networking.WeatherApiConstants;
+
 /**
  * Created by RIVARA on 12/08/2016.
  */
 
-public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.CityRowViewHolder>{
+public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.CityRowViewHolder> {
 
-    private ArrayList<City> mCitiesList;
     private final OnItemClickListener mOnItemClickListener;
+    private ArrayList<City> mCitiesList;
 
-    public interface OnItemClickListener {
-        void onItemClick(City city, ImageView profilePicture, TextView cityName);
-    }
-
-    public static class CityRowViewHolder extends RecyclerView.ViewHolder{
-
-        @BindView(R.id.image_view_city) ImageView mImageViewCity;
-        @BindView(R.id.text_view_city_name_value) TextView mTextViewCityName;
-
-        public CityRowViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-
-        public void bind(final City item, final ImageView imageViewCity, final TextView textViewName,final OnItemClickListener listener) {
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    listener.onItemClick(item, imageViewCity, textViewName);
-                }
-            });
-        }
-
-    }
-
-    public CitiesListAdapter(OnItemClickListener onItemClickListener){
+    public CitiesListAdapter(OnItemClickListener onItemClickListener) {
         mOnItemClickListener = onItemClickListener;
         mCitiesList = new ArrayList<>();
     }
@@ -64,13 +42,14 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
     public void onBindViewHolder(CityRowViewHolder holder, int position) {
         City city = mCitiesList.get(position);
 
-        if(city != null)
+        if (city != null)
             buildCityCell(city, holder);
     }
 
     private void buildCityCell(City city, CityRowViewHolder holder) {
-        holder.bind(city, holder.mImageViewCity, holder.mTextViewCityName, mOnItemClickListener);
+        holder.bind(city, holder.mImageViewCity, holder.mTextViewCityName, holder.mTextViewCityTemperature, mOnItemClickListener);
         holder.mTextViewCityName.setText(city.getName());
+        holder.mTextViewCityTemperature.setText(String.valueOf(city.getMain().getTemp()) + WeatherApiConstants.UNIT_CHARACTER);
     }
 
     @Override
@@ -81,5 +60,34 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
     public void setCitiesList(ArrayList<City> mCitiesList) {
         this.mCitiesList = mCitiesList;
         notifyDataSetChanged();
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(City city, ImageView profilePicture, TextView cityName, TextView cityTemperature);
+    }
+
+    public static class CityRowViewHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.image_view_city)
+        ImageView mImageViewCity;
+        @BindView(R.id.text_view_city_name_value)
+        TextView mTextViewCityName;
+        @BindView(R.id.text_view_city_temperature_value)
+        TextView mTextViewCityTemperature;
+
+        public CityRowViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+
+        public void bind(final City item, final ImageView imageViewCity, final TextView textViewName, final TextView textViewTemperature, final OnItemClickListener listener) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(item, imageViewCity, textViewName, textViewTemperature);
+                }
+            });
+        }
+
     }
 }

@@ -26,5 +26,19 @@
         android:textSize="@dimen/city_row_name_text_size"
         android:transitionName="@string/city_name_transition" />
 
+    <TextView
+        android:id="@+id/text_view_city_temperature_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:layout_marginRight="@dimen/city_row_temperature_margin_right"
+        android:layout_toEndOf="@+id/text_view_city_name_value"
+        android:gravity="right"
+        android:text="25°C"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/city_row_temperature_text_size"
+        android:textStyle="bold"
+        android:transitionName="@string/city_temperature_transition" />
 
 </RelativeLayout>

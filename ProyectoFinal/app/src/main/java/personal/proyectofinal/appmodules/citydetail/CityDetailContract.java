@@ -8,7 +8,7 @@ import personal.proyectofinal.model.City;
 
 public interface CityDetailContract {
     interface View{
-        void showCityInfo(String name);
+        void showCityInfo(String name, String temperature);
     }
 
     interface Presenter{

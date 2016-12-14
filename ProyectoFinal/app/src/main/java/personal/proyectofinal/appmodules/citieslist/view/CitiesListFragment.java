@@ -108,20 +108,22 @@ public class CitiesListFragment extends Fragment implements CitiesContract.View,
         mCitiesRecyclerView.setLayoutManager(mLayoutManager);
         mCitiesListAdapter = new CitiesListAdapter(new CitiesListAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(City city, ImageView cityImageView, TextView cityNameTextView) {
-                startCityDetail(city, cityImageView, cityNameTextView);
+            public void onItemClick(City city, ImageView cityImageView, TextView cityNameTextView, TextView cityTemperatureTextView) {
+                startCityDetail(city, cityImageView, cityNameTextView, cityTemperatureTextView);
             }
         });
         mCitiesRecyclerView.setAdapter(mCitiesListAdapter);
     }
 
-    private void startCityDetail(City city, ImageView cityImageView, TextView cityNameTextView) {
+    private void startCityDetail(City city, ImageView cityImageView, TextView cityNameTextView, TextView cityTemperatureTextView) {
         Intent intent = new Intent(this.getActivity(), CityDetailActivity.class);
         intent.putExtra(((CitiesActivity) this.getActivity()).CITY_ID_KEY, city);
         Pair<View, String> imageViewCityPair = Pair.create((View) cityImageView, getString(R.string.city_image_transition));
         Pair<View, String> textViewCityNamePair = Pair.create((View) cityNameTextView, getString(R.string.city_name_transition));
+        Pair<View, String> textViewCityTemperaturePair = Pair.create((View) cityTemperatureTextView, getString(R.string.city_temperature_transition));
+
         ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation(this.getActivity(), imageViewCityPair, textViewCityNamePair);
+                makeSceneTransitionAnimation(this.getActivity(), imageViewCityPair, textViewCityNamePair, textViewCityTemperaturePair);
         startActivity(intent, options.toBundle());
     }
 
@@ -168,7 +170,7 @@ public class CitiesListFragment extends Fragment implements CitiesContract.View,
         List<City> citiesList = weatherApiResponse.getList();
 
         mCitiesPresenter.onCitiesListLoadedSuccessful(new ArrayList<City>(citiesList));
-        }
+    }
 
     @Override
     public void onFailure(Call<WeatherApiResponse> call, Throwable t) {

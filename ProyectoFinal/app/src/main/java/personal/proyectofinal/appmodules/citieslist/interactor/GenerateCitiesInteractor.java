@@ -22,17 +22,17 @@ public class GenerateCitiesInteractor implements CitiesContract.GenerateCitiesIn
 
     @Override
     public void generateCitiesInDatabase() {
-        if(!mCityDao.areCitiesAvailable())
-            mCityDao.saveCitiesList(generateRandomCitiesList());
+        /*if(!mCityDao.areCitiesAvailable())
+            mCityDao.saveCitiesList(generateRandomCitiesList());*/
     }
 
     private ArrayList<City> generateRandomCitiesList(){
         ArrayList<City> citiesList = new ArrayList<>();
 
-        for(int counter = 0; counter < 10; counter++){
+        /*for(int counter = 0; counter < 10; counter++){
             City city = new City(counter, "Name " + counter);
             citiesList.add(city);
-        }
+        }*/
 
         return citiesList;
     }

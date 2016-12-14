@@ -24,12 +24,12 @@ public class LoadCitiesInteractor implements CitiesContract.LoadCitiesInteractor
 
     @Override
     public void loadCitiesFromDatabase(OnCitiesListLoaded onCitiesListLoaded) {
-        mOnCitiesListLoaded = onCitiesListLoaded;
+        /*mOnCitiesListLoaded = onCitiesListLoaded;
         ArrayList<City> citiesList = mCitiesDao.getCitiesList();
 
         if(citiesList != null && citiesList.size() > 0)
             mOnCitiesListLoaded.onCitiesListLoadedSuccessful(citiesList);
         else
-            mOnCitiesListLoaded.onErrorLoadingCitiesList();
+            mOnCitiesListLoaded.onErrorLoadingCitiesList();*/
     }
 }

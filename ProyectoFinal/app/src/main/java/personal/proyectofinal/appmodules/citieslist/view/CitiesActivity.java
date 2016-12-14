@@ -51,7 +51,6 @@ public class CitiesActivity extends AppCompatActivity implements NavigationView.
     private DrawerLayout mDrawer;
     private NavigationView mNavigationView;
     private CoordinatorLayout mMainCoordinatorLayout;
-    private int ActiveFragment; //1 lista de ciudades, 2 acerca de
     private Fragment MyActiveFragment;
 
     public static Context sContext;
@@ -125,14 +124,12 @@ public class CitiesActivity extends AppCompatActivity implements NavigationView.
         updateToolbarTitle(getString(R.string.cities_list_fragment_title));
         MyActiveFragment = CitiesListFragment.newInstance();
         changeFragment(MyActiveFragment);
-        ActiveFragment = 1; // lista de ciudades
     }
 
     private void showAboutFragment() {
         updateToolbarTitle(getString(R.string.about_fragment_title));
         MyActiveFragment = AboutFragment.newInstance();
         changeFragment(MyActiveFragment);
-        ActiveFragment = 2; // acerca de
     }
 
     private void updateToolbarTitle(String toolbarTitle) {
