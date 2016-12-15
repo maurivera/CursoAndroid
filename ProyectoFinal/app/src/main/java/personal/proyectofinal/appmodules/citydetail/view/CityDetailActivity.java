@@ -1,5 +1,6 @@
 package personal.proyectofinal.appmodules.citydetail.view;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -15,8 +16,16 @@ import butterknife.ButterKnife;
 
 public class CityDetailActivity extends AppCompatActivity implements CityDetailContract.View {
 
-    @BindView(R.id.text_view_city_name_value) TextView mTextViewName;
-    @BindView(R.id.text_view_city_temperature_value) TextView mTextViewTemperature;
+    @BindView(R.id.text_view_city_name_value)
+    TextView mTextViewName;
+    @BindView(R.id.text_view_city_temperature_value)
+    TextView mTextViewTemperature;
+    @BindView(R.id.text_view_city_humidity_value)
+    TextView mTextViewHumidity;
+    @BindView(R.id.text_view_city_wind_speed_value)
+    TextView mTextViewSpeedValue;
+    @BindView(R.id.text_view_city_conditions_value)
+    TextView mTextViewConditions;
 
     private CityDetailPresenter mCityDetailPresenter;
 
@@ -39,9 +48,12 @@ public class CityDetailActivity extends AppCompatActivity implements CityDetailC
     }
 
     @Override
-    public void showCityInfo(String name, String temperature) {
+    public void showCityInfo(String name, String temperature, String humidity, String speedValue, String conditions) {
         mTextViewName.setText(name);
         mTextViewTemperature.setText(temperature);
+        mTextViewHumidity.setText(humidity);
+        mTextViewSpeedValue.setText(speedValue);
+        mTextViewConditions.setText(conditions);
     }
 
     @Override

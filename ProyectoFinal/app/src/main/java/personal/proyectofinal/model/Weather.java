@@ -1,5 +1,8 @@
 package personal.proyectofinal.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +10,19 @@ import com.google.gson.annotations.SerializedName;
  * Created by RIVARA on 12/08/2016.
  */
 
-public class Weather {
+public class Weather implements Parcelable {
+
+    public static final Creator<Weather> CREATOR = new Creator<Weather>() {
+        @Override
+        public Weather createFromParcel(Parcel in) {
+            return new Weather(in);
+        }
+
+        @Override
+        public Weather[] newArray(int size) {
+            return new Weather[size];
+        }
+    };
 
     @SerializedName("id")
     @Expose
@@ -22,76 +37,79 @@ public class Weather {
     @Expose
     private String icon;
 
+    protected Weather(Parcel in) {
+        id = in.readInt();
+        main = in.readString();
+        description = in.readString();
+        icon = in.readString();
+    }
+
     /**
-     *
-     * @return
-     *     The id
+     * @return The id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     *
-     * @param id
-     *     The id
+     * @param id The id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     *
-     * @return
-     *     The main
+     * @return The main
      */
     public String getMain() {
         return main;
     }
 
     /**
-     *
-     * @param main
-     *     The main
+     * @param main The main
      */
     public void setMain(String main) {
         this.main = main;
     }
 
     /**
-     *
-     * @return
-     *     The description
+     * @return The description
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     *
-     * @param description
-     *     The description
+     * @param description The description
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
-     *
-     * @return
-     *     The icon
+     * @return The icon
      */
     public String getIcon() {
         return icon;
     }
 
     /**
-     *
-     * @param icon
-     *     The icon
+     * @param icon The icon
      */
     public void setIcon(String icon) {
         this.icon = icon;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(main);
+        parcel.writeString(description);
+        parcel.writeString(icon);
+    }
 }

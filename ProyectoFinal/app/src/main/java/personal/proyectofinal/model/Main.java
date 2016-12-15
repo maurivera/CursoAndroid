@@ -12,6 +12,18 @@ import com.google.gson.annotations.SerializedName;
 
 public class Main implements Parcelable {
 
+    public static final Creator<Main> CREATOR = new Creator<Main>() {
+        @Override
+        public Main createFromParcel(Parcel in) {
+            return new Main(in);
+        }
+
+        @Override
+        public Main[] newArray(int size) {
+            return new Main[size];
+        }
+    };
+
     @SerializedName("temp")
     @Expose
     private Double temp;
@@ -28,91 +40,79 @@ public class Main implements Parcelable {
     @Expose
     private Double tempMax;
 
+    protected Main(Parcel in) {
+        temp = in.readDouble();
+        pressure = in.readDouble();
+        humidity = in.readInt();
+        tempMin = in.readDouble();
+        tempMax = in.readDouble();
+    }
+
     /**
-     *
-     * @return
-     *     The temp
+     * @return The temp
      */
     public Double getTemp() {
         return temp;
     }
 
     /**
-     *
-     * @param temp
-     *     The temp
+     * @param temp The temp
      */
     public void setTemp(Double temp) {
         this.temp = temp;
     }
 
     /**
-     *
-     * @return
-     *     The pressure
+     * @return The pressure
      */
     public Double getPressure() {
         return pressure;
     }
 
     /**
-     *
-     * @param pressure
-     *     The pressure
+     * @param pressure The pressure
      */
     public void setPressure(Double pressure) {
         this.pressure = pressure;
     }
 
     /**
-     *
-     * @return
-     *     The humidity
+     * @return The humidity
      */
     public Integer getHumidity() {
         return humidity;
     }
 
     /**
-     *
-     * @param humidity
-     *     The humidity
+     * @param humidity The humidity
      */
     public void setHumidity(Integer humidity) {
         this.humidity = humidity;
     }
 
     /**
-     *
-     * @return
-     *     The tempMin
+     * @return The tempMin
      */
     public Double getTempMin() {
         return tempMin;
     }
 
     /**
-     *
-     * @param tempMin
-     *     The temp_min
+     * @param tempMin The temp_min
      */
     public void setTempMin(Double tempMin) {
         this.tempMin = tempMin;
     }
 
     /**
-     *
-     * @return
-     *     The tempMax
+     * @return The tempMax
      */
     public Double getTempMax() {
         return tempMax;
     }
 
     /**
-     *
-     * @param tempMax
-     *     The temp_max
+     * @param tempMax The temp_max
      */
     public void setTempMax(Double tempMax) {
         this.tempMax = tempMax;
@@ -125,6 +125,10 @@ public class Main implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        parcel.writeDouble(temp);
+        parcel.writeDouble(pressure);
+        parcel.writeInt(humidity);
+        parcel.writeDouble(tempMin);
+        parcel.writeDouble(tempMax);
     }
 }

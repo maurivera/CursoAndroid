@@ -12,6 +12,18 @@ import com.google.gson.annotations.SerializedName;
 
 public class Coord implements Parcelable {
 
+    public static final Creator<Coord> CREATOR = new Creator<Coord>() {
+        @Override
+        public Coord createFromParcel(Parcel in) {
+            return new Coord(in);
+        }
+
+        @Override
+        public Coord[] newArray(int size) {
+            return new Coord[size];
+        }
+    };
+
     @SerializedName("lon")
     @Expose
     private Double lon;
@@ -19,37 +31,34 @@ public class Coord implements Parcelable {
     @Expose
     private Double lat;
 
+    protected Coord(Parcel in) {
+        lon = in.readDouble();
+        lat = in.readDouble();
+    }
+
     /**
-     *
-     * @return
-     *     The lon
+     * @return The lon
      */
     public Double getLon() {
         return lon;
     }
 
     /**
-     *
-     * @param lon
-     *     The lon
+     * @param lon The lon
      */
     public void setLon(Double lon) {
         this.lon = lon;
     }
 
     /**
-     *
-     * @return
-     *     The lat
+     * @return The lat
      */
     public Double getLat() {
         return lat;
     }
 
     /**
-     *
-     * @param lat
-     *     The lat
+     * @param lat The lat
      */
     public void setLat(Double lat) {
         this.lat = lat;
@@ -62,6 +71,7 @@ public class Coord implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        parcel.writeDouble(lon);
+        parcel.writeDouble(lat);
     }
 }

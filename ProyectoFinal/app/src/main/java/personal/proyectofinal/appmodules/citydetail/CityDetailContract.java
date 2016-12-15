@@ -7,11 +7,11 @@ import personal.proyectofinal.model.City;
  */
 
 public interface CityDetailContract {
-    interface View{
-        void showCityInfo(String name, String temperature);
+    interface View {
+        void showCityInfo(String name, String temperature, String humidity, String speedValue, String conditions);
     }
 
-    interface Presenter{
+    interface Presenter {
         void loadCityInfo(City city);
     }
 
